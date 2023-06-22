@@ -35,6 +35,17 @@ function type() {
   }
 }
 
+var logoLink = document.getElementById('logo-link');
+
+  logoLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    var scrollToElement = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    window.scrollTo({
+      top: scrollToElement,
+      behavior: 'smooth'
+    });
+  });
+  
 function erase() {
   const currentText = texts[textIndex];
   const erasingText = currentText.slice(0, --charIndex);
